@@ -1,0 +1,28 @@
+/* GRID SQUARE STYLES */
+/* Example of use
+https://codepen.io/anon/pen/zwWqPa
+*/
+
+@import "variables";
+@import "mixins";
+
+.square-container {
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  width: 100%;
+
+  &:after {
+    clear: both;
+  }
+}
+
+.square {
+  .square-size(1);
+}
+.square.2x {
+  .square-size(2);
+}
+.square.3x {
+  .square-size(3);
+}

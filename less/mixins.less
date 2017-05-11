@@ -1,0 +1,12 @@
+
+.square-size(@size) {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  outline: none;
+  box-sizing: border-box;
+  width: ((100% / @num-square) * @size);
+  margin: @margin-square;
+  border: @border-square-style;
+  padding: @padding-square;
+}
