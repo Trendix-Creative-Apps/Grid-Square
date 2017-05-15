@@ -1,5 +1,29 @@
 
-.square-size(@size) {
+.square-definitions(@lg-container) {
+  .square {
+    transition: all 0.2s;
+    .square-size(1, 1, @lg-container);
+    &.xs-2 {
+      .square-size(1, 2, @lg-container);
+    }
+    &.xs-3 {
+      .square-size(1, 3, @lg-container);
+    }
+  }
+  .square.x2 {
+    &.xs-2 {
+      .square-size(2, 2, @lg-container);
+    }
+    &.xs-3 {
+      .square-size(2, 3, @lg-container);
+    }
+  }
+  .square.x3 {
+    .square-size(3, 3, @lg-container);
+  }
+}
+
+.square-size(@size, @xs-size, @lg-container) {
   display: inline-block;
   float: left;
   overflow: hidden;
@@ -9,4 +33,14 @@
   margin: @margin-square;
   border: @border-square-style;
   padding: @padding-square;
+
+  & when (@lg-container = true) {
+    @media (min-width: 1367px) {
+      width: ((100% / @num-square-lg) * @size);
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: ((100% / @num-square) * @xs-size);
+  }
 }

@@ -15,14 +15,10 @@ https://codepen.io/anon/pen/zwWqPa
   &:after {
     clear: both;
   }
-}
 
-.square {
-  .square-size(1);
-}
-.square.x2 {
-  .square-size(2);
-}
-.square.x3 {
-  .square-size(3);
+  .square-definitions(false);
+
+  &.lg-container {
+    .square-definitions(true);
+  }
 }
