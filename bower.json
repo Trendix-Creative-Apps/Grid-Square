@@ -1,0 +1,15 @@
+{
+  "name": "grid-square",
+  "homepage": "https://github.com/Trendix-Creative-Apps/Grid-Square",
+  "authors": [
+    "Jesús Muriel <jesus@trendix.es>"
+  ],
+  "description": "Simple and Adaptative Square Grid System. Writen in LESS and Javascript",
+  "main": "",
+  "keywords": [
+    "grid",
+    "square",
+    "container"
+  ],
+  "license": "GLP-3.0"
+}
