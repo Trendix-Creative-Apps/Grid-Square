@@ -1,0 +1,37 @@
+{
+  "name": "grid-square",
+  "version": "0.0.1",
+  "description": "Simple Grid Square System",
+  "main": "gulpfile.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-less": "^3.3.0",
+    "gulp-uglify": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trendix-Creative-Apps/Grid-Square.git"
+  },
+  "keywords": [
+    "Grid",
+    "Square",
+    "Responsive"
+  ],
+  "author": "Trendix - Creative Apps",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Trendix-Creative-Apps/Grid-Square/issues"
+  },
+  "homepage": "https://github.com/Trendix-Creative-Apps/Grid-Square#readme"
+}

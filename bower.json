@@ -1,9 +1,14 @@
 {
   "name": "grid-square",
+  "version": "0.0.1",
   "homepage": "https://github.com/Trendix-Creative-Apps/Grid-Square",
   "authors": [
-    "Jesús Muriel <jesus@trendix.es>"
+    "Jesús Muriel <jesus@trendix.es>",
+    "José Alcántara <jose@trendix.es>"
   ],
+  "dependencies": {
+    "jquery": ">=1.10.2"
+  },
   "description": "Simple and Adaptative Square Grid System. Writen in LESS and Javascript",
   "main": "",
   "keywords": [
