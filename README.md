@@ -1,2 +1,2 @@
 # Grid-Square
-Simple and Adaptative Square Grid System. Writen in LESS and Javascript
+Simple and Adaptative Square Grid System. Written in LESS and Javascript
