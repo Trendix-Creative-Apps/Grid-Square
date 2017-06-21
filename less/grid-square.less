@@ -7,10 +7,12 @@ https://codepen.io/anon/pen/zwWqPa
 @import "mixins";
 
 .square-container {
-  margin: 0px;
   padding: 0px;
+  margin: 0;
   display: block;
   width: 100%;
+  min-height: 100px;
+  background: blue;
 
   &:after {
     clear: both;
@@ -21,4 +23,12 @@ https://codepen.io/anon/pen/zwWqPa
   &.lg-container {
     .square-definitions(true);
   }
+}
+
+.red {
+  background: red;
+}
+
+.green {
+  background: green;
 }

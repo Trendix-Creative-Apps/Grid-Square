@@ -27,3 +27,7 @@ gulp.task('less', function() {
 });
 
 gulp.task('default', ["js", "less"]);
+gulp.task('watch', function() {
+    gulp.watch(['./less/**/*'], ['less']);
+    gulp.watch(['./js/**/*'], ['js']);
+});

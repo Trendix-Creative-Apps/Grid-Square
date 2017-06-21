@@ -1,37 +1,64 @@
-var squareHeight = null;
+document.grid = {
+    loop: 0,
+    options: {
+        squareHeight: null,
+        columns: 5,
+    },
+    normalizeOptions: function(options) {
+        if (options == undefined || options == null) {
+            return;
+        }
+        this.options = Object.assign(this.options, options);
+    },
+    setSquares: function () {
+        this.loop = 0;
+        var squares = document.getElementsByClassName('square');
 
-$(document).ready(function() {
-    function setSquares() {
-        $('.square').each(function () {
-            var square = $(this);
+        for (var i = 0; i < squares.length; i++) {
+            this.modelSquare(squares[i]);
+        }
+    },
+    modelSquare: function(square) {
+        var divisor = 1;
+        // TODO hacer expresión regular y añadir validación para que xN sea menor o igual que options.columns
+        if (this.hasClass(square, 'x2')) {
+            divisor = 2;
+        }
+        if (this.hasClass(square, 'x3')) {
+            divisor = 3;
+        }
 
-            if (squareHeight != null) {
-                square.css('height', squareHeight);
-                return true;
-            }
+        this.loop = this.loop + divisor;
 
-            var divisor = 1;
-            if (square.hasClass('x2')) {
-                divisor = 2;
-            }
-            if (square.hasClass('x3')) {
-                divisor = 3;
-            }
+        if (this.loop % this.options.columns == 0) {
+            square.style.marginRight = '0px';
+        }
 
-            var width = square.css('width').replace('px', '');
+        if (this.options.squareHeight != null) {
+            square.style.height = this.options.squareHeight + 'px';
+            return false;
+        }
 
-            squareHeight = width / divisor;
+        var width = square.clientWidth;
 
-            square.css('height', width / divisor);
-        });
+        this.options.squareHeight = width / divisor;
+
+        square.style.height = this.options.squareHeight + 'px';
+    },
+    init: function(options) {
+        this.normalizeOptions(options);
+        this.setSquares();
+    },
+    hasClass: function(element, className) {
+        return ( (" " + element.className + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1 );
     }
+};
 
-    setSquares();
+window.addEventListener('load', function() {
+    document.grid.init();
+});
 
-    function resizeSquares() {
-        squareHeight = null;
-        setSquares();
-    }
-
-    $(window).resize(resizeSquares);
+window.addEventListener('resize', function() {
+    document.grid.options.squareHeight = null;
+    document.grid.setSquares();
 });
