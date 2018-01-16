@@ -41,7 +41,7 @@ document.grid = {
 
         var width = square.clientWidth;
 
-        this.options.squareHeight = width / divisor;
+        this.options.squareHeight = width / this.options.columns;
 
         square.style.height = this.options.squareHeight + 'px';
     },
