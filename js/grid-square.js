@@ -2,7 +2,7 @@ document.grid = {
     loop: 0,
     options: {
         squareHeight: null,
-        columns: 5,
+        columns: 3,
     },
     normalizeOptions: function(options) {
         if (options == undefined || options == null) {
